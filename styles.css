@@ -1,0 +1,37 @@
+canvas {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    background: rgb(94, 72, 32);
+}
+
+canvas#cWater {
+    background: transparent;
+    pointer-events: none;
+    /*
+    display: none;
+    */
+    opacity: 1;
+}
+
+#ui {
+    position: absolute;
+    background: #fff;
+    padding: 10px;
+}
+
+.uiText {
+    position: relative;
+    width: 50px;
+    border: none;
+    border-bottom: 1px solid #888;
+}
+
+.uiText:focus {
+    border: 1px solid #888;
+}
+
+.hidden {
+    display: none;
+}

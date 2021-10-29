@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./styles.css" />
+
+    <!--<script src="./libs/perlin-master/perlin.js"></script>-->
+    <script src="./main.js" defer type="module"></script>
+</head>
+
+<body>
+    <canvas id="cCells"></canvas>
+    <canvas id="cWater"></canvas>
+
+    <div id="ui">
+        <div>
+            <button id="btnRun">
+                Run
+            </button>
+            <button id="btnStep">
+                Step
+            </button>
+            <button id="btnClear">
+                Clear
+            </button>
+            <button id="btnNoise">
+                Noise
+            </button>
+            <button id="btnWaterReset">
+                Water
+            </button>
+        </div>
+
+        <div>
+            <div class="range">
+                <span>Cells</span>
+                <input type="range" min="20" max="1000" value="200" id="rngNum" />
+                <input type="text" value="200" class="uiText" id="inputNum" />
+            </div>
+            <div class="range">
+                <span>Threshold</span>
+                <input type="range" min="0" max="1" value=".5" step=".02" id="rngThreshold" />
+                <input type="text" value=".5" class="uiText" id="inputThreshold" />
+            </div>
+            <div class="range">
+                <span>Waterlevel</span>
+                <input type="range" min="0" max="1" value=".5" step=".02" id="rngWaterlevel" />
+                <input type="text" value="0" class="uiText" id="inputWaterlevel" />
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
