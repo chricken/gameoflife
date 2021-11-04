@@ -10,6 +10,8 @@ let w = 0;
 let h = 0;
 let threshold = 0;
 
+
+
 class WaterCell {
     constructor(level) {
         this.level = level;
@@ -19,6 +21,7 @@ class WaterCell {
 
 const water = {
 
+    bildUrl: "./heightmaps/downflow.png",
 
     getRaster() {
         return raster;
@@ -96,7 +99,8 @@ const water = {
     init(...props) {
         [w, h, threshold, c] = props
         ctx = c.getContext('2d');
-        return water.loadImage("./heightmaps/badlands3.png").then(
+
+        return water.loadImage(water.bildUrl).then(
             water.drawImage
         ).then(
             water.fillRaster

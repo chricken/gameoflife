@@ -228,7 +228,7 @@ const gol = {
     },
 
     startRun(evt) {
-        console.log(running);
+        // console.log(running);
         if (running) {
             window.cancelAnimationFrame(gol.runID);
             evt.target.innerHTML = 'Run';

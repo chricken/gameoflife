@@ -14,6 +14,32 @@ let thresholdWater = 0.2;
 
 let cellsDown = false;
 
+const heightmaps = [{
+    url: "./heightmaps/badlands1.png",
+    name: 'Bad Lands'
+}, {
+    url: "./heightmaps/badlands2.png",
+    name: 'Very Bad Lands'
+}, {
+    url: "./heightmaps/badlands3.png",
+    name: 'Even Worse'
+}, {
+    url: "./heightmaps/downflow.png",
+    name: 'Downflow'
+}, {
+    url: "./heightmaps/fjorde1.png",
+    name: 'Fjorde'
+}, {
+    url: "./heightmaps/bulge.png",
+    name: 'Bulge'
+}, {
+    url: "./heightmaps/waving.png",
+    name: 'Waving'
+}, {
+    url: "./heightmaps/waving2.png",
+    name: 'More Waving'
+}]
+
 // Funktionen
 const drawOnCells = evt => {
     if (cellsDown) {
@@ -65,6 +91,25 @@ const init = () => {
 
     cWater.width = window.innerWidth;
     cWater.height = window.innerHeight;
+
+    // Selectbox füllen
+    heightmaps.map(heightmap => {
+        dom.create({
+            inhalt: heightmap.name,
+            typ: 'option',
+            eltern: dom.$('#slctHeightmap'),
+            attr: {
+                value: heightmap.url
+            }
+        })
+    })
+
+    // Auf change reagieren
+    dom.$('#slctHeightmap').addEventListener('change', () => {
+        water.bildUrl = dom.$('#slctHeightmap').value;
+        initWater();        
+    })
+
 
     initWater();
     // initCells();     // Wird von initWater automatsich aufgerufen
